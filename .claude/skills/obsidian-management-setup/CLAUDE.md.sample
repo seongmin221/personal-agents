@@ -1,0 +1,15 @@
+### 작업 - vault 매핑
+> 특정 작업에 대한 vault 의 위치 매핑한 테이블
+
+|작업|vault directory|
+|--|--|
+|{{label}}|{{absolute path to vault}}|
+
+### 작업 - claude session 위치 매핑
+> 특정 작업에 대한 claude session 의 위치 매핑한 테이블
+> log-conversation 스킬에 의해 사용
+> claude session directory 하위에서 시작된 claude session 은 매핑된 작업으로 취급
+
+|작업|claude session directory|
+|--|--|
+|{{label}}|{{session directory}}|

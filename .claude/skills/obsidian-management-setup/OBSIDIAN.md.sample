@@ -1,0 +1,80 @@
+# OBSIDIAN.md ({{vault display name}})
+
+이 문서는 `obsidian-vault-manager` 와 `log-conversation` 이 이 vault 의 구조 및 컨벤션을 파악하기 위해 읽는 문서.
+
+{{optional line — include only when logging is disabled for this vault:}}
+{{logging: disabled}}
+
+## 전체 폴더 구조
+```
+{{vault root name}}/
+├── {{folder 1}}
+├── {{folder 2}}
+├── ...
+└── {{📆 Daily Archive — if canonical; otherwise keep the vault's own daily folder name}}/
+    ├── Notes/       (일일 노트 위치)
+    └── Logs/        (`## LOGs` 에서 추출된 로그 파일 — 추출 시 자동 생성)
+```
+
+## 이모지-카테고리 매핑
+> `obsidian-vault-manager` 가 일일 노트 `## NOTEs` 하위의 h3 이모지를 보고 추출 대상 폴더를 결정하는 근거.
+> vault 마다 다를 수 있음.
+
+|이모지|카테고리 폴더|
+|--|--|
+|{{emoji1}}|{{vault-relative folder path 1}}|
+|{{emoji2}}|{{vault-relative folder path 2}}|
+
+매핑에 없는 폴더는 수동 관리 대상, 노트 추출 대상이 아님.
+
+## 카테고리별 분류 전략
+- 각 카테고리는 자체 분류 전략을 가질 수 있음. 노트 추출 시 해당 카테고리의 기존 파일 배치 방식을 관찰하고 따를 것.
+- {{per-category notes, e.g. "📝 meetings: YYYY-MM/YYYY-MM-DD 회의이름.md"}}
+- {{canonical only: "📆 Daily Archive/Logs: 넓은 작업 범위로 파일을 묶고, 파일 내에서 h3 이하로 세부 카테고리화."}}
+
+## 일일 노트 템플릿
+경로: `{{daily-note path pattern — reflects this vault's actual layout}}`
+
+```
+{{If canonical (migrate):}}
+## TODOs
+- [ ] Todo 1
+
+
+## NOTEs
+
+### {category emoji} TITLE
+- notes about current subject
+
+
+## LOGs
+
+### TITLE (대화 주제를 넓게 아우름)
+- short summary of conversation with claude
+
+{{If keeping existing format + LOGs:}}
+## {{existing todo header}}
+- [ ] Todo 1
+
+## {{existing notes header}}
+
+## LOGs
+
+### TITLE
+- short summary
+
+{{If keeping existing format, no LOGs:}}
+## {{existing todo header}}
+- [ ] Todo 1
+
+## {{existing notes header}}
+```
+
+## 추출 노트 템플릿
+```
+(no h1 header)
+- extracted note
+
+## Category (if needed)
+- extracted note
+```
