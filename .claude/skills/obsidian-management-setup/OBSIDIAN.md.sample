@@ -1,6 +1,6 @@
 # OBSIDIAN.md ({{vault display name}})
 
-이 문서는 `obsidian-vault-manager` 와 `log-conversation` 이 이 vault 의 구조 및 컨벤션을 파악하기 위해 읽는 문서.
+이 문서는 `obsidian-vault-manager`, `log-conversation`, `extract-session-notes` 가 이 vault 의 구조 및 컨벤션을 파악하기 위해 읽는 문서.
 
 {{optional line — include only when logging is disabled for this vault:}}
 {{logging: disabled}}

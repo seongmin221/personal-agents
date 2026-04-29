@@ -18,6 +18,7 @@ Claude-Obsidian 작업 조직 인프라를 이 머신에 설치하거나 업데�
 - `hook-spawn-settings.json` — hook 이 띄우는 headless claude 가 사용할 scoped 권한 설정
 - `agents/obsidian-vault-manager.md` — 글로벌 agent
 - `skills/log-conversation/SKILL.md` — 글로벌 skill
+- `skills/extract-session-notes/SKILL.md` — 글로벌 skill (`## NOTEs` 추출용)
 - `hooks/log-conversation-stop.sh`, `hooks/log-conversation-session-end.sh` — hook 스크립트
 
 이 artifact 들을 업데이트하려면: skill 디렉토리 내의 파일을 직접 편집한 뒤 skill 을 "refresh" 모드로 재실행하여 `~/.claude/*` 에 반영.
@@ -98,6 +99,7 @@ Claude-Obsidian 작업 조직 인프라를 이 머신에 설치하거나 업데�
 - Canonical global artifact 를 `~/.claude/` 로 복사:
   - `agents/obsidian-vault-manager.md` → `~/.claude/agents/obsidian-vault-manager.md`
   - `skills/log-conversation/SKILL.md` → `~/.claude/skills/log-conversation/SKILL.md`
+  - `skills/extract-session-notes/SKILL.md` → `~/.claude/skills/extract-session-notes/SKILL.md`
   - `hooks/log-conversation-stop.sh` → `~/.claude/hooks/log-conversation-stop.sh` (+ chmod +x)
   - `hooks/log-conversation-session-end.sh` → `~/.claude/hooks/log-conversation-session-end.sh` (+ chmod +x)
   - `hook-spawn-settings.json` → `~/.claude/hook-spawn-settings.json`
@@ -125,6 +127,7 @@ Claude-Obsidian 작업 조직 인프라를 이 머신에 설치하거나 업데�
 
 - **agent (`obsidian-vault-manager`) 는 canonical `## TODOs / ## NOTEs` 를 전제**. "기존 포맷 유지" 를 택한 vault 에서는 agent 의 todo/note migration 이 작동하지 않음. 로그 관련 기능만 작동.
 - **`log-conversation` skill 은 `## LOGs` 를 전제**. `logging: disabled` 로 표시된 vault 에서는 skill 이 no-op.
+- **`extract-session-notes` skill 은 canonical `## NOTEs` + OBSIDIAN.md 의 이모지-카테고리 매핑을 전제**. "기존 포맷 유지" 를 택해 `## NOTEs` 가 없는 vault 에서는 skill 이 작동하지 않음.
 
 이 제약은 "keep existing format" 단계에서 유저에게 명시적으로 알릴 것.
 
