@@ -38,6 +38,12 @@
 ```
 {{If canonical (migrate):}}
 ## TODOs
+
+### 오늘 일정
+- [ ] 09:00-10:00 일정 1
+- [ ] (종일) 일정 2
+
+### 해야할 일
 - [ ] Todo 1
 
 
@@ -78,6 +84,11 @@
 ## Category (if needed)
 - extracted note
 ```
+
+## TODOs 하위 구조
+{{canonical 템플릿을 택한 vault 만 해당 — 기존 포맷 유지 vault 는 이 섹션 생략}}
+- `### 오늘 일정`: 그 날 들어 있는 macOS 캘린더 이벤트. `obsidian-vault-manager` 가 자동 채움. 이벤트 0개면 h3 자체 생략.
+- `### 해야할 일`: 체크박스 todo. 새 todo 는 이 h3 하위에 추가. `obsidian-vault-manager` 가 어제 일일 노트의 미완료 todo 를 이 h3 아래로 캐리오버.
 
 ## 캘린더 통합
 > `obsidian-vault-manager` 가 일일 노트의 `## TODOs` 아래 `### 오늘 일정` 에 자동으로 채워 넣을 macOS Calendar 의 이벤트 출처를 정의.
