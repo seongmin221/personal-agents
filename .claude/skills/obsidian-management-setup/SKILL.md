@@ -17,6 +17,7 @@ Claude-Obsidian 작업 조직 인프라를 이 머신에 설치하거나 업데�
 - `settings.snippet.json` — `~/.claude/settings.json` 의 `hooks` 에 유저가 paste 할 JSON 블록
 - `hook-spawn-settings.json` — hook 이 띄우는 headless claude 가 사용할 scoped 권한 설정
 - `agents/obsidian-vault-manager.md` — 글로벌 agent
+- `scripts/today-cal-events.js` — 글로벌 스크립트 (obsidian-vault-manager 의 EventKit 캘린더 조회용; 반복 일정을 정확히 전개)
 - `skills/log-conversation/SKILL.md` — 글로벌 skill
 - `skills/extract-session-notes/SKILL.md` — 글로벌 skill (`## NOTEs` 추출용)
 - `hooks/log-conversation-stop.sh`, `hooks/log-conversation-session-end.sh` — hook 스크립트
@@ -99,6 +100,7 @@ Claude-Obsidian 작업 조직 인프라를 이 머신에 설치하거나 업데�
 - 모인 `(label, vault path)` 와 `(label, session dir)` 로 `~/.claude/CLAUDE.md` 를 `CLAUDE.md.sample` 기반으로 렌더링.
 - Canonical global artifact 를 `~/.claude/` 로 복사:
   - `agents/obsidian-vault-manager.md` → `~/.claude/agents/obsidian-vault-manager.md`
+  - `scripts/today-cal-events.js` → `~/.claude/scripts/today-cal-events.js`
   - `skills/log-conversation/SKILL.md` → `~/.claude/skills/log-conversation/SKILL.md`
   - `skills/extract-session-notes/SKILL.md` → `~/.claude/skills/extract-session-notes/SKILL.md`
   - `hooks/log-conversation-stop.sh` → `~/.claude/hooks/log-conversation-stop.sh` (+ chmod +x)
